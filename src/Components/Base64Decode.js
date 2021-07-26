@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 
-export default function B64Convert(props) {
+export default function B64Decode(props) {
     const [value, setValue] = React.useState('');
     const [outValue, setOutValue] = React.useState('');
 
@@ -14,13 +14,13 @@ export default function B64Convert(props) {
     };
 
     const invokeAPI = () => {
-        const url = 'http://127.0.0.1:5000/base64/encode';
+        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev/utility/base64/decode';
         const postData = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ 'input': value })
+            body: JSON.stringify({ 'action': 'base64-decode', 'message': value })
         };
         fetch(url, postData)
             .then(result => result.json())
@@ -50,7 +50,7 @@ export default function B64Convert(props) {
                     </Grid>
                     <Grid item xs={12}>
                         <Button variant="contained" color="primary" fullWidth onClick={invokeAPI}>
-                            Convert to base64
+                            Decode from base64
                     </Button>
                     </Grid>
                     <Grid item xs={12}>
