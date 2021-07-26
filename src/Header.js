@@ -18,10 +18,16 @@ function Header(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const history = useHistory();
   
-  const handleB64Click = () => {
+  const handleB64EncodeClick = () => {
     setAnchorEl(null);
     setPopperOpen(false);
-    history.push('/base64/convert');
+    history.push('/base64/encode');
+  };
+
+  const handleB64DecodeClick = () => {
+    setAnchorEl(null);
+    setPopperOpen(false);
+    history.push('/base64/decode');
   };
 
   const togglePopper = (event) => {
@@ -40,15 +46,15 @@ function Header(props) {
   const servicesList = [
     {
       text: 'Convert to Base64',
-      onClick: handleB64Click
+      onClick: handleB64EncodeClick
     },
     {
       text: 'Decode Base64',
-      onClick: handleB64Click
+      onClick: handleB64DecodeClick
     },
     {
       text: 'Conversion',
-      onClick: handleB64Click
+      onClick: handleB64EncodeClick
     }
   ];
 
