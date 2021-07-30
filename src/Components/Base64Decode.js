@@ -14,13 +14,13 @@ export default function B64Decode(props) {
     };
 
     const invokeAPI = () => {
-        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev/utility/base64/decode';
+        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev';
         const postData = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ 'action': 'base64-decode', 'message': value })
+            body: JSON.stringify({ 'resource': 'base64', 'action': 'decode', 'message': value })
         };
         fetch(url, postData)
             .then(result => result.json())

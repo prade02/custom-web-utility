@@ -14,13 +14,13 @@ export default function B64Encode(props) {
     };
 
     const invokeAPI = () => {
-        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev/utility/base64/encode';
+        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev';
         const postData = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ 'action': 'base64-encode', 'message': value })
+            body: JSON.stringify({ 'resource': 'base64', 'action': 'encode', 'message': value })
         };
         fetch(url, postData)
             .then(result => result.json())
