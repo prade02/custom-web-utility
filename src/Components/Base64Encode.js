@@ -14,7 +14,7 @@ export default function B64Encode(props) {
     };
 
     const invokeAPI = () => {
-        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev';
+        const url = 'https://zv4x1xlv0h.execute-api.ap-south-1.amazonaws.com/dev/utility';
         const postData = {
             method: "POST",
             headers: {
